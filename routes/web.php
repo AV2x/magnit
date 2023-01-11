@@ -18,4 +18,8 @@ Route::view('/','welcome');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::any('/api/send-message', function (\Illuminate\Http\Request $request){
+    $message =  $request->input('text');
+    broadcast(new \App\Events\MessageSent(\Illuminate\Support\Facades\Auth::user(),$message));
+});
 

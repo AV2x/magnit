@@ -17,6 +17,10 @@ Broadcast::channel('users', function ($user) {
     return $user;
 });
 
+Broadcast::channel('chat', function ($user) {
+    return \Illuminate\Support\Facades\Auth::check();
+});
+
 //Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 //    return (int) $user->id === (int) $id;
 //});
