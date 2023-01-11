@@ -87,6 +87,7 @@ export default {
               method: 'POST',
               body: JSON.stringify({text: this.text})
           });
+         this.text = null;
       }
     },
     mounted() {

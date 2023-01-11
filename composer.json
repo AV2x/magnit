@@ -51,7 +51,7 @@
         ],
         "start-project": [
             "composer update",
-            "./vendor/bin/sail @php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "cp .env.example .env",
             "./vendor/bin/sail up -d",
             "./vendor/bin/sail php artisan migrate",
             "npm install --force",
